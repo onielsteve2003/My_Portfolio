@@ -11,6 +11,7 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -48,6 +49,9 @@
             <div class="logo">
                 <a href="#home">OS.</a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -63,57 +67,60 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text" data-aos="fade-right">
-                <h1 class="glitch" data-text="Hi, I'm Onah Stephen">Hi, I'm Onah Stephen</h1>
-                <div class="typing-wrapper">
-                    <span class="static-text">I'm a&nbsp;</span>
-                    <ul class="dynamic-texts">
-                        <li><span>Full Stack Developer</span></li>
-                        <li><span>Backend Developer</span></li>
-                        <li><span>JavaScript Expert</span></li>
-                        <li><span>Python Developer</span></li>
-                    </ul>
-                </div>
-                <p class="hero-description">
-                    Crafting robust applications with modern technologies. 
-                    Specializing in both JavaScript and Python ecosystems.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="primary-btn">
-                        <span class="btn-content">
-                            <i class="fas fa-code"></i>
-                            <span>View Projects</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-                    </a>
-                    <a href="https://drive.google.com/uc?export=download&id=1HK3VHJJyg1T5GFYN4NjKqn4s84SypyKP" 
-                        class="secondary-btn" 
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <span class="btn-content">
-                            <i class="fas fa-file-download"></i>
-                            <span>Download CV</span>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <h1 class="glitch" data-text="Hi, I'm Onah Stephen">Hi, I'm Onah Stephen</h1>
+                    <div class="typing-wrapper">
+                        <span class="static-text">I'm a&nbsp;</span>
+                        <ul class="dynamic-texts">
+                            <li><span>Full Stack Developer</span></li>
+                            <li><span>Backend Developer</span></li>
+                            <li><span>JavaScript Expert</span></li>
+                            <li><span>Python Developer</span></li>
+                        </ul>
+                    </div>
+                    <p class="hero-description">
+                        Crafting robust applications with modern technologies. 
+                        Specializing in both JavaScript and Python ecosystems.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="primary-btn">
+                            <span class="btn-content">
+                                <i class="fas fa-code"></i>
+                                <span>View Projects</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                        <a href="https://drive.google.com/uc?export=download&id=1HGDuCz7FEOYyUMDP7wWD_ckq_h4sqPDX" 
+                            class="secondary-btn" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download>
+                            <span class="btn-content">
+                                <i class="fas fa-file-download"></i>
+                                <span>Download CV</span>
+                            </span>
                             <div class="btn-hover-effect"></div>
-                        </span>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="tech-stack">
+                        <img src="images/node.png" alt="Node.js" title="Node.js">
+                        <img src="images/python.png" alt="Python" title="Python">
+                        <img src="images/django.jfif" alt="Django" title="Django">
+                        <img src="images/express.png" alt="Express" title="Express">
+                        <img src="images/mongodb.png" alt="MongoDB" title="MongoDB">
+                        <img src="images/postgreSQL.png" alt="PostgreSQL" title="PostgreSQL">
+                        <img src="images/react.png" alt="React Js" title="React Js">
+                        <img src="images/js.png" alt="Javascript" title="Javascript">
+                    </div>
                 </div>
-                <div class="tech-stack">
-                    <img src="images/node.png" alt="Node.js" title="Node.js">
-                    <img src="images/python.png" alt="Python" title="Python">
-                    <img src="images/django.jfif" alt="Django" title="Django">
-                    <img src="images/express.png" alt="Express" title="Express">
-                    <img src="images/mongodb.png" alt="MongoDB" title="MongoDB">
-                    <img src="images/postgreSQL.png" alt="PostgreSQL" title="PostgreSQL">
-                    <img src="images/react.png" alt="React Js" title="React Js">
-                    <img src="images/js.png" alt="Javascript" title="Javascript">
-                </div>
-            </div>
-            <div class="hero-image" data-aos="fade-left">
-                <img src="images/obum.PNG" alt="Onah Stephen" class="profile-image">
-                <div class="experience-badge">
-                    <span class="years">6</span>
-                    <span class="text">Years of Experience</span>
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="images/obum.PNG" alt="Onah Stephen" class="profile-image">
+                    <div class="experience-badge">
+                        <span class="years">6</span>
+                        <span class="text">Years of Experience</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,6 +164,39 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Work Experience</h2>
             <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Fullstack Engineer, Frankfurt - Germany</h3>
+                        <h4>HTM Hydro Technology Motors</h4>
+                        <p class="timeline-date">August 2025 - Present</p>
+                        <ul class="experience-list">
+                            <li>Designed and maintained RESTful plus GraphQL APIs with NestJS, Node.js, and Python to streamline system integrations.</li>
+                            <li>Implemented Dockerized CI/CD pipelines backed by Git-based workflows, improving deployment reliability and compliance.</li>
+                            <li>Optimized backend services powered by Python, Django, and Node.js, reducing API response latency by 30%.</li>
+                            <li>Deployed resilient workloads on AWS (S3, Lambda, EC2, RDS) to deliver 99.9% availability.</li>
+                            <li>Hardened SQL (MySQL, PostgreSQL) and MongoDB databases with indexing strategies that accelerated retrievals by 40%.</li>
+                            <li>Automated quality gates with GitHub Actions, Jest, and integration tests to secure every release.</li>
+                        </ul>
+                        <p class="experience-key-tech">Key Technologies: NestJS, Node.js, Python, Django, AWS, Docker, GraphQL, MongoDB, PostgreSQL, GitHub Actions, Jest</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Fullstack Engineer (Contract), Remote - Nigeria</h3>
+                        <h4>Gurugeeks</h4>
+                        <p class="timeline-date">April 2025 - August 2025</p>
+                        <ul class="experience-list">
+                            <li>Co-created a feature-rich LMS built with Next.js, Tailwind CSS, Node.js, and TypeScript, complete with secure payments, RBAC, chat, and scheduling for 500+ active users.</li>
+                            <li>Partnered with cross-functional teams to launch scalable HRM and CRM SaaS experiences anchored in cloud-native best practices.</li>
+                            <li>Defined system architecture plus database schemas with MongoDB and PostgreSQL, ensuring consistently high throughput.</li>
+                            <li>Championed Agile rituals, code quality reviews, and fast iterations to keep milestones on track.</li>
+                            <li>Helped unlock new subscription revenue as the LMS onboarded schools through seamless integrations.</li>
+                        </ul>
+                        <p class="experience-key-tech">Key Technologies: Python, FastAPI, Tailwind CSS, Next.js, Node.js, TypeScript, Amazon S3, Paystack, PostgreSQL, MongoDB, RESTful APIs, AWS, Tortoise ORM, Mongoose</p>
+                    </div>
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -324,6 +364,7 @@
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="backend">Backend</button>
                 <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
             </div>
             <div class="projects-grid">
                 <!-- Speedly -->
@@ -425,6 +466,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card" data-category="frontend" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="images/hope4dliving.PNG" alt="Hope4Dliving">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>Hope4Dliving</h3>
+                                <p>Hope4Dliving is a not for profit and non-political organization built to preach the good news about redemption through Jesus</p>
+                                <div class="project-tech">
+                                    <span>React / NextJs</span>
+                                    <span>NextJs</span>
+                                    <span>Node Js</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://hope4dliving.org/" target="_blank" class="project-btn">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                    <a href="https://github.com/onielsteve2003" target="_blank" class="project-btn">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Add more project cards -->
             </div>
@@ -509,7 +574,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Onah Stephen. All rights reserved.</p>
+                <p>&copy; 2026 Onah Stephen. All rights reserved.</p>
             </div>
         </div>
     </footer>

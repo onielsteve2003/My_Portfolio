@@ -14,32 +14,79 @@ document.addEventListener('DOMContentLoaded', function() {
     function setTheme(theme) {
         body.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        themeToggle.innerHTML = theme === 'dark' ? 
-            '<i class="fas fa-sun"></i>' : 
-            '<i class="fas fa-moon"></i>';
+        if (themeToggle) {
+            themeToggle.innerHTML = theme === 'dark' ? 
+                '<i class="fas fa-sun"></i>' : 
+                '<i class="fas fa-moon"></i>';
+        }
     }
 
-    // Check for saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link (navigate + close)
+        if (navLinks) {
+            const menuLinks = navLinks.querySelectorAll('a[href^="#"]');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+    }
 
     // Navbar Scroll Effect
     const navbar = document.querySelector('.nav-wrapper');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            navbar.style.background = 'rgba(255,255,255,0.95)';
-        } else {
-            navbar.style.boxShadow = 'none';
-            navbar.style.background = 'transparent';
+    const scrollTopButton = document.getElementById('scroll-top');
+
+    const handleScrollState = () => {
+        if (navbar) {
+            if (window.scrollY > 30) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
         }
-    });
+
+        if (scrollTopButton) {
+            if (window.pageYOffset > 500) {
+                scrollTopButton.classList.add('visible');
+            } else {
+                scrollTopButton.classList.remove('visible');
+            }
+        }
+    };
+
+    handleScrollState();
+    window.addEventListener('scroll', handleScrollState);
 
     // Project Filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -64,20 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Scroll to Top Button
-    const scrollTopButton = document.getElementById('scroll-top');
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 500) {
-            scrollTopButton.classList.add('visible');
-        } else {
-            scrollTopButton.classList.remove('visible');
-        }
-    });
-
-    scrollTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if (scrollTopButton) {
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // Smooth Scrolling for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -117,38 +155,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Notification System
-    function showNotification(message, type) {
+    function showNotification(message, type = 'success') {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.textContent = message;
-        
-        // Style the notification
+
         Object.assign(notification.style, {
             position: 'fixed',
             top: '20px',
             right: '20px',
-            padding: '1rem 2rem',
-            borderRadius: '5px',
-            color: '#fff',
-            backgroundColor: type === 'success' ? '#28a745' : '#dc3545',
+            padding: '1rem 1.5rem',
             zIndex: '1000',
-            transition: '0.3s ease',
-            opacity: '0'
+            opacity: '0',
+            transform: 'translateY(-10px)',
+            transition: '0.3s ease'
         });
-        
+
         document.body.appendChild(notification);
-        
-        // Fade in
-        setTimeout(() => {
+
+        requestAnimationFrame(() => {
             notification.style.opacity = '1';
-        }, 10);
-        
-        // Fade out and remove
+            notification.style.transform = 'translateY(0)';
+        });
+
         setTimeout(() => {
             notification.style.opacity = '0';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
+            notification.style.transform = 'translateY(-10px)';
+            setTimeout(() => notification.remove(), 300);
         }, 3000);
     }
 
@@ -173,79 +206,4 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(updateText, 3000);
     }
 
-    // CV Download Handler
-document.querySelector('.secondary-btn[download]').addEventListener('click', async function(e) {
-    e.preventDefault();
-    
-    try {
-        // Show loading state
-        const btnContent = this.querySelector('.btn-content span');
-        const originalText = btnContent.textContent;
-        btnContent.textContent = 'Downloading...';
-        
-        // Get the Google Drive file ID
-        const fileId = '1HK3VHJJyg1T5GFYN4NjKqn4s84SypyKP';
-        const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-        
-        // Fetch the file
-        const response = await fetch(downloadUrl);
-        const blob = await response.blob();
-        
-        // Create download link
-        const downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = 'Onah_Stephen_CV.pdf';
-        
-        // Trigger download
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-        
-        // Reset button text
-        btnContent.textContent = originalText;
-        
-        // Show success notification
-        showNotification('CV downloaded successfully!', 'success');
-        
-    } catch (error) {
-        console.error('Download failed:', error);
-        showNotification('Download failed. Please try again.', 'error');
-    }
-});
-
-// Add this if you don't already have a notification function
-function showNotification(message, type) {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    
-    // Style the notification
-    Object.assign(notification.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        padding: '1rem 2rem',
-        borderRadius: '5px',
-        color: '#fff',
-        backgroundColor: type === 'success' ? '#28a745' : '#dc3545',
-        zIndex: '1000',
-        opacity: '0',
-        transition: '0.3s ease'
-    });
-    
-    document.body.appendChild(notification);
-    
-    // Fade in
-    setTimeout(() => {
-        notification.style.opacity = '1';
-    }, 10);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
-}
 });
