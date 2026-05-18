@@ -1,8 +1,10 @@
-/* ── Custom Cursor ─────────────────────────────────────────── */
+/* ── Custom Cursor (desktop / mouse only) ─────────────────── */
+const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 const cursorDot  = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
 
-if (cursorDot && cursorRing) {
+// Skip the rAF loop entirely on touch devices — saves battery & CPU
+if (!isTouch && cursorDot && cursorRing) {
   let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
   document.addEventListener('mousemove', e => {
@@ -10,7 +12,7 @@ if (cursorDot && cursorRing) {
     mouseY = e.clientY;
     cursorDot.style.left = mouseX + 'px';
     cursorDot.style.top  = mouseY + 'px';
-  });
+  }, { passive: true });
 
   function animateCursor() {
     ringX += (mouseX - ringX) * 0.24;
