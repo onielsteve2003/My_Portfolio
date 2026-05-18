@@ -1,550 +1,523 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Onah Stephen | Full Stack Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-    <meta name="description" content="Onah Stephen - Full Stack Developer specializing in JavaScript and Python ecosystems. Expert in Node.js, Django, Flask, FastAPI, and cloud technologies.">
-    
-    <!-- Favicon -->
+    <title>Onah Stephen — Full Stack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Onah Stephen — Full Stack Developer specializing in Node.js, React, Python, and cloud-native architectures. Based in Lagos, Nigeria.">
+
     <link rel="shortcut icon" href="images/stephen.JPG">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Floating Social Bar -->
-    <div class="social-bar">
-        <a href="https://github.com/onielsteve2003" target="_blank" class="social-icon">
-            <i class="fab fa-github"></i>
-            <span class="tooltip">GitHub</span>
-        </a>
-        <a href="https://linkedin.com/in/stephen-onah-1b2832238" target="_blank" class="social-icon">
-            <i class="fab fa-linkedin"></i>
-            <span class="tooltip">LinkedIn</span>
-        </a>
-        <a href="https://twitter.com/onah_stevenn" target="_blank" class="social-icon">
-            <i class="fab fa-twitter"></i>
-            <span class="tooltip">Twitter</span>
-        </a>
-        <a href="mailto:stephenobumonah@gmail.com" class="social-icon">
-            <i class="fas fa-envelope"></i>
-            <span class="tooltip">Email</span>
-        </a>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Grain Overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Background Orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="nav-wrapper" data-aos="fade-down">
+    <nav class="nav-wrapper">
         <div class="nav-content">
             <div class="logo">
-                <a href="#home">OS.</a>
+                <a href="#home">OS<span class="logo-dot">.</span></a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                <li><a href="#about"><span class="nav-num">01.</span>About</a></li>
+                <li><a href="#experience"><span class="nav-num">02.</span>Experience</a></li>
+                <li><a href="#projects"><span class="nav-num">03.</span>Work</a></li>
+                <li><a href="#contact"><span class="nav-num">04.</span>Contact</a></li>
+                <li>
+                    <a href="https://drive.google.com/uc?export=download&id=1HGDuCz7FEOYyUMDP7wWD_ckq_h4sqPDX"
+                       class="nav-resume-btn" target="_blank" rel="noopener noreferrer" download>
+                        Resume
+                    </a>
+                </li>
+                <li class="theme-toggle" role="button" tabindex="0" title="Toggle theme">
+                    <i class="fas fa-sun"></i>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Floating Social Bar (left) -->
+    <div class="social-bar" aria-label="Social links">
+        <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/stephen-onah-1b2832238" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/onah_stevenn" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:stephenobumonah@gmail.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <div class="side-line"></div>
+    </div>
+
+    <!-- Email Bar (right) -->
+    <div class="email-bar">
+        <a href="mailto:stephenobumonah@gmail.com">stephenobumonah@gmail.com</a>
+        <div class="side-line"></div>
+    </div>
+
+    <!-- ======================== HERO ======================== -->
     <section id="home" class="hero">
+        <div class="hero-bg-text" aria-hidden="true">STEPHEN</div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text" data-aos="fade-right">
-                    <h1 class="glitch" data-text="Hi, I'm Onah Stephen">Hi, I'm Onah Stephen</h1>
-                    <div class="typing-wrapper">
-                        <span class="static-text">I'm a&nbsp;</span>
-                        <ul class="dynamic-texts">
-                            <li><span>Full Stack Developer</span></li>
-                            <li><span>Backend Developer</span></li>
-                            <li><span>JavaScript Expert</span></li>
-                            <li><span>Python Developer</span></li>
-                        </ul>
-                    </div>
-                    <p class="hero-description">
-                        Crafting robust applications with modern technologies. 
-                        Specializing in both JavaScript and Python ecosystems.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#projects" class="primary-btn">
-                            <span class="btn-content">
-                                <i class="fas fa-code"></i>
-                                <span>View Projects</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </span>
-                        </a>
-                        <a href="https://drive.google.com/uc?export=download&id=1HGDuCz7FEOYyUMDP7wWD_ckq_h4sqPDX" 
-                            class="secondary-btn" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download>
-                            <span class="btn-content">
-                                <i class="fas fa-file-download"></i>
-                                <span>Download CV</span>
-                            </span>
-                            <div class="btn-hover-effect"></div>
-                        </a>
-                    </div>
-                    <div class="tech-stack">
-                        <img src="images/node.png" alt="Node.js" title="Node.js">
-                        <img src="images/python.png" alt="Python" title="Python">
-                        <img src="images/django.jfif" alt="Django" title="Django">
-                        <img src="images/express.png" alt="Express" title="Express">
-                        <img src="images/mongodb.png" alt="MongoDB" title="MongoDB">
-                        <img src="images/postgreSQL.png" alt="PostgreSQL" title="PostgreSQL">
-                        <img src="images/react.png" alt="React Js" title="React Js">
-                        <img src="images/js.png" alt="Javascript" title="Javascript">
-                    </div>
+                <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100">
+                    <span class="status-dot"></span>
+                    Available for opportunities
+                </p>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                    <span class="hero-name">Hi, I'm Onah Stephen.</span>
+                    <span class="hero-headline">I build things<br>for the web.</span>
+                </h1>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    Full-stack engineer specializing in Node.js, React, Python and cloud architectures.
+                    I design and build scalable digital experiences — from elegant UIs to high-performance APIs.
+                </p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#projects" class="btn-primary">
+                        See my work <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://drive.google.com/uc?export=download&id=1HGDuCz7FEOYyUMDP7wWD_ckq_h4sqPDX"
+                       class="btn-secondary" target="_blank" rel="noopener noreferrer" download>
+                        Download CV
+                    </a>
                 </div>
-                <div class="hero-image" data-aos="fade-left">
-                    <img src="images/obum.PNG" alt="Onah Stephen" class="profile-image">
-                    <div class="experience-badge">
-                        <span class="years">6</span>
-                        <span class="text">Years of Experience</span>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat">
+                        <span class="stat-num">6+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">15+</span>
+                        <span class="stat-label">Projects Shipped</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">5+</span>
+                        <span class="stat-label">Companies Served</span>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <i class="fas fa-arrow-down"></i>
+        </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ======================== ABOUT ======================== -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-up">
-                    <p class="lead-text">
-                        I'm a Full Stack Developer with expertise in both JavaScript and Python ecosystems. 
-                        With over 6 years of experience, I specialize in building scalable web applications 
-                        and robust APIs.
+            <div class="section-label" data-aos="fade-up">
+                <span class="section-num">01.</span>
+                <span class="section-title-text">About Me</span>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <p>
+                        I'm a full-stack engineer based in <strong>Lagos, Nigeria</strong>, passionate about
+                        building products that live at the intersection of great engineering and great UX.
                     </p>
-                    <div class="achievement-cards">
-                        <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fas fa-code"></i>
-                            <h3>15+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fas fa-coffee"></i>
-                            <h3>100+</h3>
-                            <p>Cups of Coffee</p>
-                        </div>
-                        <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fas fa-clock"></i>
-                            <h3>1000+</h3>
-                            <p>Hours Coded</p>
-                        </div>
+                    <p>
+                        I thrive in end-to-end development — architecting REST &amp; GraphQL APIs, crafting
+                        responsive React/Next.js frontends, and deploying production-grade systems on AWS
+                        and modern cloud platforms. I bring a strong bias for clean code, performance, and reliability.
+                    </p>
+                    <p>
+                        Outside of work, I'm constantly learning — contributing to open-source projects,
+                        building side products, and exploring new tools in the JavaScript and Python ecosystems.
+                    </p>
+                    <div class="about-tags">
+                        <span>Node.js</span>
+                        <span>React / Next.js</span>
+                        <span>Python / Django</span>
+                        <span>TypeScript</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+                <div class="about-image-wrap" data-aos="fade-left" data-aos-delay="100">
+                    <div class="about-image-frame">
+                        <img src="images/obum.PNG" alt="Onah Stephen">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- ======================== EXPERIENCE ======================== -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Work Experience</h2>
-            <div class="timeline" data-aos="fade-up">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Fullstack Engineer, Frankfurt - Germany</h3>
-                        <h4>HTM Hydro Technology Motors</h4>
-                        <p class="timeline-date">August 2025 - Present</p>
-                        <ul class="experience-list">
-                            <li>Designed and maintained RESTful plus GraphQL APIs with NestJS, Node.js, and Python to streamline system integrations.</li>
+            <div class="section-label" data-aos="fade-up">
+                <span class="section-num">02.</span>
+                <span class="section-title-text">Where I've Worked</span>
+                <div class="section-line"></div>
+            </div>
+            <div class="exp-layout" data-aos="fade-up">
+                <div class="exp-tabs" role="tablist">
+                    <button class="exp-tab active" role="tab" aria-selected="true" data-target="exp-0">HTM Hydro</button>
+                    <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-1">Gurugeeks</button>
+                    <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-2">Thirdwish</button>
+                    <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-3">Hupdev</button>
+                    <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-4">Brimble</button>
+                    <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-5">RE Land</button>
+                </div>
+                <div class="exp-panels">
+                    <div class="exp-panel active" id="exp-0" role="tabpanel">
+                        <h3>Fullstack Engineer <span class="company-accent">@ HTM Hydro Technology Motors</span></h3>
+                        <p class="exp-date">August 2025 — Present &middot; Frankfurt, Germany</p>
+                        <ul>
+                            <li>Designed and maintained RESTful + GraphQL APIs with NestJS, Node.js, and Python to streamline system integrations.</li>
                             <li>Implemented Dockerized CI/CD pipelines backed by Git-based workflows, improving deployment reliability and compliance.</li>
-                            <li>Optimized backend services powered by Python, Django, and Node.js, reducing API response latency by 30%.</li>
-                            <li>Deployed resilient workloads on AWS (S3, Lambda, EC2, RDS) to deliver 99.9% availability.</li>
-                            <li>Hardened SQL (MySQL, PostgreSQL) and MongoDB databases with indexing strategies that accelerated retrievals by 40%.</li>
+                            <li>Optimized backend services reducing API response latency by 30%.</li>
+                            <li>Deployed resilient workloads on AWS (S3, Lambda, EC2, RDS) delivering 99.9% availability.</li>
                             <li>Automated quality gates with GitHub Actions, Jest, and integration tests to secure every release.</li>
                         </ul>
-                        <p class="experience-key-tech">Key Technologies: NestJS, Node.js, Python, Django, AWS, Docker, GraphQL, MongoDB, PostgreSQL, GitHub Actions, Jest</p>
+                        <p class="exp-tech">NestJS &middot; Node.js &middot; Python &middot; Django &middot; AWS &middot; Docker &middot; GraphQL &middot; MongoDB &middot; PostgreSQL &middot; GitHub Actions</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Fullstack Engineer (Contract), Remote - Nigeria</h3>
-                        <h4>Gurugeeks</h4>
-                        <p class="timeline-date">April 2025 - August 2025</p>
-                        <ul class="experience-list">
-                            <li>Co-created a feature-rich LMS built with Next.js, Tailwind CSS, Node.js, and TypeScript, complete with secure payments, RBAC, chat, and scheduling for 500+ active users.</li>
-                            <li>Partnered with cross-functional teams to launch scalable HRM and CRM SaaS experiences anchored in cloud-native best practices.</li>
-                            <li>Defined system architecture plus database schemas with MongoDB and PostgreSQL, ensuring consistently high throughput.</li>
-                            <li>Championed Agile rituals, code quality reviews, and fast iterations to keep milestones on track.</li>
-                            <li>Helped unlock new subscription revenue as the LMS onboarded schools through seamless integrations.</li>
+                    <div class="exp-panel" id="exp-1" role="tabpanel">
+                        <h3>Fullstack Engineer <span class="company-accent">@ Gurugeeks</span></h3>
+                        <p class="exp-date">April 2025 — August 2025 &middot; Contract, Remote Nigeria</p>
+                        <ul>
+                            <li>Co-created a feature-rich LMS with Next.js, Tailwind CSS, Node.js, and TypeScript serving 500+ active users.</li>
+                            <li>Launched scalable HRM and CRM SaaS products anchored in cloud-native best practices.</li>
+                            <li>Defined system architecture and database schemas ensuring consistently high throughput.</li>
+                            <li>Championed Agile rituals and fast iterations to keep milestones on track.</li>
                         </ul>
-                        <p class="experience-key-tech">Key Technologies: Python, FastAPI, Tailwind CSS, Next.js, Node.js, TypeScript, Amazon S3, Paystack, PostgreSQL, MongoDB, RESTful APIs, AWS, Tortoise ORM, Mongoose</p>
+                        <p class="exp-tech">Python &middot; FastAPI &middot; Next.js &middot; TypeScript &middot; AWS S3 &middot; Paystack &middot; PostgreSQL &middot; MongoDB &middot; Tortoise ORM</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Fullstack Developer, Remote - Spain</h3>
-                        <h4>Thirdwish</h4>
-                        <p class="timeline-date">November 2024 - January 2025</p>
-                        <ul class="experience-list">
-                            <li>Designed and implemented RESTful and GraphQL APIs using NestJS, Node.js, and Python, improving system efficiency and performance.</li>
-                            <li>Leveraged AWS Lambda, Amazon S3, and EC2 to build serverless and containerized solutions, reducing operational costs and improving scalability.</li>
-                            <li>Designed and maintained SQL and NoSQL databases (PostgreSQL, MySQL, MongoDB) to enhance data storage efficiency and retrieval speeds.</li>
+                    <div class="exp-panel" id="exp-2" role="tabpanel">
+                        <h3>Fullstack Developer <span class="company-accent">@ Thirdwish</span></h3>
+                        <p class="exp-date">November 2024 — January 2025 &middot; Remote, Spain</p>
+                        <ul>
+                            <li>Designed and implemented RESTful and GraphQL APIs using NestJS, Node.js, and Python.</li>
+                            <li>Built serverless and containerized solutions on AWS Lambda, S3, and EC2 reducing operational costs.</li>
+                            <li>Managed SQL and NoSQL databases (PostgreSQL, MySQL, MongoDB) for optimal performance.</li>
                         </ul>
+                        <p class="exp-tech">NestJS &middot; Node.js &middot; Python &middot; AWS &middot; PostgreSQL &middot; MySQL &middot; MongoDB &middot; GraphQL</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Backend Developer, Remote - Nigeria</h3>
-                        <h4>Hupdev</h4>
-                        <p class="timeline-date">June 2022 - November 2024</p>
-                        <ul class="experience-list">
-                            <li>Developed and optimized backend systems using Python, Django, and Node.js, reducing API response time by 30%</li>
-                            <li>Designed and integrated RESTful APIs and GraphQL endpoints, enhancing frontend-backend communication.</li>
-                            <li>Optimized database performance for SQL, PostgreSQL, and MongoDB, improving query efficiency by 50%.</li>
+                    <div class="exp-panel" id="exp-3" role="tabpanel">
+                        <h3>Backend Developer <span class="company-accent">@ Hupdev</span></h3>
+                        <p class="exp-date">June 2022 — November 2024 &middot; Remote, Nigeria</p>
+                        <ul>
+                            <li>Developed and optimized backend systems using Python, Django, and Node.js — reducing API response time by 30%.</li>
+                            <li>Designed and integrated RESTful APIs and GraphQL endpoints enhancing frontend-backend communication.</li>
+                            <li>Optimized database performance for SQL, PostgreSQL, and MongoDB — improving query efficiency by 50%.</li>
                         </ul>
+                        <p class="exp-tech">Python &middot; Django &middot; Node.js &middot; GraphQL &middot; MongoDB &middot; PostgreSQL &middot; MySQL</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Backend Developer, Remote - Nigeria</h3>
-                        <h4>Brimble</h4>
-                        <p class="timeline-date">April 2023 - Feburary 2024</p>
-                        <ul class="experience-list">
-                            <li>Developed and Maintained Scalable Backend Systems: Engineered robust backend solutions using Node.js and TypeScript, ensuring optimal performance, maintainability, and scalability.</li>
-                            <li>Designed and Optimized APIs: Built and maintained RESTful and GraphQL APIs, seamlessly integrating with frontend applications and third-party services to enhance functionality.</li>
-                            <li>Enhanced Database Performance and Security: Managed SQL (MySQL, PostgreSQL) and NoSQL (MongoDB) databases, implementing indexing and query optimization to improve data retrieval speed by 40%.</li>
+                    <div class="exp-panel" id="exp-4" role="tabpanel">
+                        <h3>Backend Developer <span class="company-accent">@ Brimble</span></h3>
+                        <p class="exp-date">April 2023 — February 2024 &middot; Remote</p>
+                        <ul>
+                            <li>Engineered robust backend solutions using Node.js and TypeScript, ensuring optimal performance and scalability.</li>
+                            <li>Built and maintained RESTful and GraphQL APIs with seamless frontend integrations.</li>
+                            <li>Managed SQL and NoSQL databases — improving data retrieval speed by 40% through indexing strategies.</li>
                         </ul>
+                        <p class="exp-tech">Node.js &middot; TypeScript &middot; GraphQL &middot; MongoDB &middot; PostgreSQL &middot; MySQL</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Backend Developer, Remote - United States</h3>
-                        <h4>RE Land</h4>
-                        <p class="timeline-date">Feburary 2022 - August 2023</p>
-                        <ul class="experience-list">
-                            <li>Led backend development using TypeScript, improving code maintainability and reducing bugs by 40%.</li>
+                    <div class="exp-panel" id="exp-5" role="tabpanel">
+                        <h3>Backend Developer <span class="company-accent">@ RE Land</span></h3>
+                        <p class="exp-date">February 2022 — August 2023 &middot; Remote, United States</p>
+                        <ul>
+                            <li>Led backend development using TypeScript — improving code maintainability and reducing bugs by 40%.</li>
                             <li>Built CI/CD pipelines for automated deployment, reducing deployment time by 60%.</li>
-                            <li>Developed a microservices-based architecture, improving system scalability and modularity.</li>
+                            <li>Developed a microservices-based architecture improving system scalability and modularity.</li>
                         </ul>
+                        <p class="exp-tech">TypeScript &middot; Node.js &middot; Microservices &middot; CI/CD &middot; PostgreSQL</p>
                     </div>
                 </div>
-                <!-- Add more timeline items for your experience -->
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- ======================== SKILLS ======================== -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skills-category" data-aos="fade-up">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React / Next.js</span>
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
+            <div class="section-label" data-aos="fade-up">
+                <span class="section-num">03.</span>
+                <span class="section-title-text">Skills &amp; Tools</span>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-layout" data-aos="fade-up">
+                <div class="skill-group">
+                    <h4>Frontend</h4>
+                    <div class="skill-tags">
+                        <span>React</span><span>Next.js</span><span>TypeScript</span>
+                        <span>JavaScript</span><span>HTML5</span><span>CSS3</span>
+                        <span>Tailwind CSS</span>
                     </div>
                 </div>
-
-                <div class="skills-category" data-aos="fade-up">
-                    <h3>Backend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js / NestJS</span>
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Django / Flask</span>
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-server"></i>
-                            <span>Express.js</span>
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>FastAPI</span>
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
+                <div class="skill-group">
+                    <h4>Backend</h4>
+                    <div class="skill-tags">
+                        <span>Node.js</span><span>NestJS</span><span>Express.js</span>
+                        <span>Python</span><span>Django</span><span>FastAPI</span>
+                        <span>Flask</span><span>GraphQL</span><span>REST APIs</span>
                     </div>
                 </div>
-
-                <div class="skills-category" data-aos="fade-up">
-                    <h3>Databases</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MongoDB</span>
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL</span>
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
+                <div class="skill-group">
+                    <h4>Databases</h4>
+                    <div class="skill-tags">
+                        <span>MongoDB</span><span>PostgreSQL</span>
+                        <span>MySQL</span><span>Redis</span>
                     </div>
                 </div>
-
-                <div class="skills-category" data-aos="fade-up">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-azure"></i>
-                            <span>Azure</span>
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
+                <div class="skill-group">
+                    <h4>Cloud &amp; DevOps</h4>
+                    <div class="skill-tags">
+                        <span>AWS S3 / Lambda / EC2 / RDS</span>
+                        <span>Docker</span><span>GitHub Actions</span>
+                        <span>CI/CD</span><span>Vercel</span><span>Render</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Tools</h4>
+                    <div class="skill-tags">
+                        <span>Git</span><span>GitHub</span><span>Jest</span>
+                        <span>Postman</span><span>Socket.IO</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ======================== PROJECTS ======================== -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="section-label" data-aos="fade-up">
+                <span class="section-num">04.</span>
+                <span class="section-title-text">Featured Work</span>
+                <div class="section-line"></div>
+            </div>
             <div class="projects-filter" data-aos="fade-up">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
                 <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
                 <button class="filter-btn" data-filter="frontend">Frontend</button>
             </div>
             <div class="projects-grid">
-                <!-- Speedly -->
-                <div class="project-card" data-category="fullstack" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="images/speedly.jpeg" alt="Speedly">
-                        <div class="project-overlay">
-                            <div class="project-details">
-                                <h3>Speedly</h3>
-                                <p>Real estate management application with comprehensive features for property listing, management, and transactions.</p>
-                                <div class="project-tech">
-                                    <span>fastAPI</span>
-                                    <span>PostgreSQL</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://play.google.com/store/apps/details?id=com.getspeedly.speedly" target="_blank" class="project-btn">
-                                        <i class="fas fa-external-link-alt"></i> Live Demo
-                                    </a>
-                                    <a href="https://github.com/onielsteve2003" target="_blank" class="project-btn">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
+
+                <!-- ── NemApp (Featured, full-width) ── -->
+                <div class="project-card featured" data-category="fullstack" data-aos="fade-up">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-overline">Featured Project</span>
+                            <div class="project-links-row">
+                                <a href="https://github.com/onielsteve2003/NemApp-social-media" target="_blank" rel="noopener" aria-label="Source code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://nem-app-social-media-web.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
                             </div>
+                        </div>
+                        <h3 class="project-title">NemApp — Social Media Platform</h3>
+                        <div class="project-description">
+                            <p>A full-stack social media application with real-time features — post feeds, story reels with viewer tracking, live notifications via Socket.IO, following/followers system, and JWT authentication with refresh token rotation. Deployed on Vercel + Render with MongoDB Atlas.</p>
+                        </div>
+                        <div class="project-tech-list">
+                            <span>Next.js 14</span>
+                            <span>TypeScript</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                            <span>Socket.IO</span>
+                            <span>Tailwind CSS</span>
+                            <span>Zustand</span>
+                        </div>
+                    </div>
+                    <div class="project-code-preview">
+                        <div class="cw-bar">
+                            <div class="cw-dots">
+                                <span class="cw-dot red"></span>
+                                <span class="cw-dot yellow"></span>
+                                <span class="cw-dot green"></span>
+                            </div>
+                            <span class="cw-filename">nemapp.ts</span>
+                        </div>
+                        <div class="cw-body">
+                            <div class="cw-line"><span class="cw-kw">interface</span> <span class="cw-type">Post</span> {</div>
+                            <div class="cw-line cw-in"><span class="cw-prop">author</span>: <span class="cw-type">User</span>;</div>
+                            <div class="cw-line cw-in"><span class="cw-prop">content</span>: <span class="cw-type">string</span>;</div>
+                            <div class="cw-line cw-in"><span class="cw-prop">likes</span>: <span class="cw-type">number</span>;</div>
+                            <div class="cw-line cw-in"><span class="cw-prop">stories</span>: <span class="cw-type">Story</span>[];</div>
+                            <div class="cw-line">}</div>
+                            <div class="cw-line cw-blank">&nbsp;</div>
+                            <div class="cw-line"><span class="cw-kw">const</span> <span class="cw-var">socket</span> = <span class="cw-fn">io</span>(BACKEND_URL);</div>
+                            <div class="cw-line"><span class="cw-var">socket</span>.<span class="cw-fn">on</span>(<span class="cw-str">'newPost'</span>, (post) =&gt; {</div>
+                            <div class="cw-line cw-in"><span class="cw-var">store</span>.<span class="cw-fn">dispatch</span>(<span class="cw-fn">addPost</span>(post));</div>
+                            <div class="cw-line">});</div>
+                            <div class="cw-line cw-blank">&nbsp;</div>
+                            <div class="cw-line"><span class="cw-comment">// users online: 1,337 ✓</span></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- LinkMeUp -->
-                <div class="project-card" data-category="backend" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="images/linkmeup_primary.png" alt="LinkMeUp">
-                        <div class="project-overlay">
-                            <div class="project-details">
-                                <h3>LinkMeUp</h3>
-                                <p>Identity and access management system with advanced security features and user authentication.</p>
-                                <div class="project-tech">
-                                    <span>Node.js</span>
-                                    <span>Express</span>
-                                    <span>PostgreSQL</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://linkmeup.us/" target="_blank" class="project-btn">
-                                        <i class="fas fa-external-link-alt"></i> Live Demo
-                                    </a>
-                                    <a href="https://github.com/onielsteve2003" target="_blank" class="project-btn">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="backend" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="images/linkmeup_security.png" alt="LinkMeUp Security">
-                        <div class="project-overlay">
-                            <div class="project-details">
-                                <h3>LinkMeUp Security</h3>
-                                <p>Identity and access management system with advanced security features and user authentication.</p>
-                                <div class="project-tech">
-                                    <span>Node Js</span>
-                                    <span>Express</span>
-                                    <span>PostgreSQL</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://linkmeup.us/security" target="_blank" class="project-btn">
-                                        <i class="fas fa-external-link-alt"></i> Live Demo
-                                    </a>
-                                    <a href="https://github.com/onielsteve2003" target="_blank" class="project-btn">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- ── Speedly ── -->
                 <div class="project-card" data-category="fullstack" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="images/abamade.PNG" alt="Abamade">
-                        <div class="project-overlay">
-                            <div class="project-details">
-                                <h3>Abamade</h3>
-                                <p>Abamade is a platform for buying and selling products.</p>
-                                <div class="project-tech">
-                                    <span>React / NextJs</span>
-                                    <span>Node Js</span>
-                                    <span>Express</span>
-                                    <span>MongoDB</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://www.abamade.com.ng/" target="_blank" class="project-btn">
-                                        <i class="fas fa-external-link-alt"></i> Live Demo
-                                    </a>
-                                    <a href="https://github.com/onielsteve2003" target="_blank" class="project-btn">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="project-header-sm">
+                        <div class="proj-folder"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-row">
+                            <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.getspeedly.speedly" target="_blank" rel="noopener" aria-label="Live"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card" data-category="frontend" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="images/hope4dliving.PNG" alt="Hope4Dliving">
-                        <div class="project-overlay">
-                            <div class="project-details">
-                                <h3>Hope4Dliving</h3>
-                                <p>Hope4Dliving is a not for profit and non-political organization built to preach the good news about redemption through Jesus</p>
-                                <div class="project-tech">
-                                    <span>React / NextJs</span>
-                                    <span>NextJs</span>
-                                    <span>Node Js</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://hope4dliving.org/" target="_blank" class="project-btn">
-                                        <i class="fas fa-external-link-alt"></i> Live Demo
-                                    </a>
-                                    <a href="https://github.com/onielsteve2003" target="_blank" class="project-btn">
-                                        <i class="fab fa-github"></i> Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="project-title-sm">Speedly</h3>
+                    <p class="project-desc-sm">Real estate management app featuring property listing, management, and transactions. Live on Google Play.</p>
+                    <div class="project-tech-list-sm">
+                        <span>FastAPI</span><span>Python</span><span>PostgreSQL</span>
                     </div>
                 </div>
 
-                <!-- Add more project cards -->
+                <!-- ── Abamade ── -->
+                <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="50">
+                    <div class="project-header-sm">
+                        <div class="proj-folder"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-row">
+                            <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.abamade.com.ng/" target="_blank" rel="noopener" aria-label="Live"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title-sm">Abamade</h3>
+                    <p class="project-desc-sm">E-commerce platform for buying and selling products — with listings, cart, checkout, and seller management.</p>
+                    <div class="project-tech-list-sm">
+                        <span>Next.js</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- ── LinkMeUp ── -->
+                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header-sm">
+                        <div class="proj-folder"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-row">
+                            <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://linkmeup.us/" target="_blank" rel="noopener" aria-label="Live"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title-sm">LinkMeUp</h3>
+                    <p class="project-desc-sm">Identity and access management system with advanced security, multi-factor authentication, and user access control.</p>
+                    <div class="project-tech-list-sm">
+                        <span>Node.js</span><span>Express</span><span>PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- ── Hope4Dliving ── -->
+                <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-header-sm">
+                        <div class="proj-folder"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-row">
+                            <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://hope4dliving.org/" target="_blank" rel="noopener" aria-label="Live"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title-sm">Hope4Dliving</h3>
+                    <p class="project-desc-sm">Non-profit website for a ministry organization — mobile-responsive with sermon content and donation integrations.</p>
+                    <div class="project-tech-list-sm">
+                        <span>React</span><span>Next.js</span><span>Node.js</span>
+                    </div>
+                </div>
+
             </div>
             <div class="projects-cta" data-aos="fade-up">
-                <a href="https://github.com/onielsteve2003" target="_blank" class="primary-btn">
+                <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener" class="btn-outline">
                     View More on GitHub <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ======================== CONTACT ======================== -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-card">
+            <div class="section-label" data-aos="fade-up">
+                <span class="section-num">05.</span>
+                <span class="section-title-text">Get In Touch</span>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-hero" data-aos="fade-up">
+                <h2 class="contact-title">Let's Work Together</h2>
+                <p class="contact-sub">
+                    Whether you have a project in mind, a role to fill, or just want to talk shop —
+                    my inbox is always open.
+                </p>
+                <a href="mailto:stephenobumonah@gmail.com" class="btn-primary btn-large">
+                    Say Hello <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-details" data-aos="fade-right">
+                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>stephenobumonah@gmail.com</p>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:stephenobumonah@gmail.com">stephenobumonah@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="contact-card">
+                    <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>Lagos, Nigeria</p>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <span>Lagos, Nigeria &middot; Open to Remote</span>
+                        </div>
                     </div>
-                    <div class="contact-card">
+                    <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p>09134352062</p>
+                        <div>
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+2349134352062">+234 913 435 2062</a>
+                        </div>
                     </div>
                 </div>
                 <form id="contact-form" class="contact-form" data-aos="fade-left">
-                    <div class="form-group">
-                        <input type="text" id="name" required>
-                        <label for="name">Name</label>
-                        <span class="focus-border"></span>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
-                        <label for="email">Email</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" required>
                         <label for="subject">Subject</label>
-                        <span class="focus-border"></span>
+                        <input type="text" id="subject" placeholder="What's this about?" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" required></textarea>
                         <label for="message">Message</label>
-                        <span class="focus-border"></span>
+                        <textarea id="message" placeholder="Tell me about your project..." rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">
+                    <button type="submit" class="btn-primary btn-full">
                         Send Message <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
@@ -552,39 +525,26 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ======================== FOOTER ======================== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <h3>Onah Stephen</h3>
-                    <p>Full Stack Developer specializing in JavaScript and Python ecosystems.</p>
+            <div class="footer-inner">
+                <p class="footer-name">Onah Stephen</p>
+                <p class="footer-copy">Built with passion &middot; &copy; 2026</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/onielsteve2003" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/stephen-onah-1b2832238" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/onah_stevenn" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
                 </div>
-                <div class="footer-right">
-                    <div class="footer-links">
-                        <a href="#about">About</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/onielsteve2003" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/stephen-onah-1b2832238" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://twitter.com/onah_stevenn" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Onah Stephen. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top">
+    <!-- Scroll to Top -->
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
