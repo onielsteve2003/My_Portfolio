@@ -1332,6 +1332,8 @@ li.theme-toggle:hover {
   color: var(--light-slate);
   transition: color var(--transition);
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 .cert-doc-link:hover {
@@ -1354,6 +1356,11 @@ li.theme-toggle:hover {
   text-align: center;
 }
 
+/* Hide overlay for document card, show for image cards */
+.cert-document .cert-overlay {
+  display: none;
+}
+
 .cert-overlay {
   position: absolute;
   inset: 0;
@@ -1364,6 +1371,7 @@ li.theme-toggle:hover {
   padding: 1.25rem;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 5;
 }
 
 .cert-card:hover .cert-overlay {
