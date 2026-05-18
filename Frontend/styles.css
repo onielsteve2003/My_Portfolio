@@ -1314,6 +1314,46 @@ li.theme-toggle:hover {
   transform: scale(1.04);
 }
 
+/* ── PDF Document card ── */
+.cert-document {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--lightest-navy) 0%, var(--navy) 100%);
+}
+
+.cert-doc-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--light-slate);
+  transition: color var(--transition);
+  cursor: pointer;
+}
+
+.cert-doc-link:hover {
+  color: var(--green);
+}
+
+.cert-doc-link i {
+  font-size: 3rem;
+  color: var(--green);
+  transition: font-size var(--transition);
+}
+
+.cert-doc-link:hover i {
+  font-size: 3.2rem;
+}
+
+.cert-doc-link span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
 .cert-overlay {
   position: absolute;
   inset: 0;
