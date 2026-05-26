@@ -327,33 +327,35 @@
             </div>
             <div class="projects-grid">
 
-                <!-- ── NemApp (Featured, full-width) ── -->
+                <!-- ── Synapse (Featured, full-width) ── -->
                 <div class="project-card featured" data-category="fullstack" data-aos="fade-up">
                     <div class="project-content">
                         <div class="project-header">
                             <span class="project-overline">Featured Project</span>
                             <div class="project-links-row">
-                                <a href="https://github.com/onielsteve2003/NemApp-social-media" target="_blank" rel="noopener" aria-label="Source code">
+                                <a href="https://github.com/onielsteve2003/Synapse" target="_blank" rel="noopener" aria-label="Source code">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://nem-app-social-media-web.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo">
+                                <a href="https://synapse-client-pi.vercel.app/" target="_blank" rel="noopener" aria-label="Live demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
-                        <h3 class="project-title">NemApp — Social Media Platform</h3>
+                        <h3 class="project-title">Synapse — Architecture Design Platform</h3>
                         <div class="project-description">
-                            <p>A full-stack social media application with real-time features — post feeds, story reels with viewer tracking, live notifications via Socket.IO, following/followers system, and JWT authentication with refresh token rotation. Deployed on Vercel + Render with MongoDB Atlas.</p>
+                            <p>A production-grade, real-time collaborative architecture design system with live canvas editing, Socket.IO-powered real-time sync across users, AI-driven canvas manipulation via Gemini API, and Infrastructure-as-Code blueprint generation (Docker Compose & Terraform). Features resilient error boundaries, JWT authentication, and deploys seamlessly on Vercel + Render with MongoDB Atlas. Phase 13 production-ready with compression, security hardening, and comprehensive error handling.</p>
                         </div>
                         <div class="project-tech-list">
-                            <span>Next.js 14</span>
+                            <span>React 18</span>
+                            <span>Vite</span>
                             <span>TypeScript</span>
                             <span>Node.js</span>
                             <span>Express</span>
                             <span>MongoDB</span>
                             <span>Socket.IO</span>
                             <span>Tailwind CSS</span>
-                            <span>Zustand</span>
+                            <span>Helmet</span>
+                            <span>Docker</span>
                         </div>
                     </div>
                     <div class="project-code-preview">
@@ -363,23 +365,37 @@
                                 <span class="cw-dot yellow"></span>
                                 <span class="cw-dot green"></span>
                             </div>
-                            <span class="cw-filename">nemapp.ts</span>
+                            <span class="cw-filename">synapse.ts</span>
                         </div>
                         <div class="cw-body">
-                            <div class="cw-line"><span class="cw-kw">interface</span> <span class="cw-type">Post</span> {</div>
-                            <div class="cw-line cw-in"><span class="cw-prop">author</span>: <span class="cw-type">User</span>;</div>
-                            <div class="cw-line cw-in"><span class="cw-prop">content</span>: <span class="cw-type">string</span>;</div>
-                            <div class="cw-line cw-in"><span class="cw-prop">likes</span>: <span class="cw-type">number</span>;</div>
-                            <div class="cw-line cw-in"><span class="cw-prop">stories</span>: <span class="cw-type">Story</span>[];</div>
-                            <div class="cw-line">}</div>
-                            <div class="cw-line cw-blank">&nbsp;</div>
-                            <div class="cw-line"><span class="cw-kw">const</span> <span class="cw-var">socket</span> = <span class="cw-fn">io</span>(BACKEND_URL);</div>
-                            <div class="cw-line"><span class="cw-var">socket</span>.<span class="cw-fn">on</span>(<span class="cw-str">'newPost'</span>, (post) =&gt; {</div>
-                            <div class="cw-line cw-in"><span class="cw-var">store</span>.<span class="cw-fn">dispatch</span>(<span class="cw-fn">addPost</span>(post));</div>
+                            <div class="cw-line"><span class="cw-comment">// Real-time canvas architecture sync</span></div>
+                            <div class="cw-line"><span class="cw-kw">const</span> <span class="cw-var">socket</span> = <span class="cw-fn">io</span>(SOCKET_URL);</div>
+                            <div class="cw-line"><span class="cw-var">socket</span>.<span class="cw-fn">on</span>(<span class="cw-str">'nodeAdded'</span>, (payload) =&gt; {</div>
+                            <div class="cw-line cw-in"><span class="cw-var">canvas</span>.<span class="cw-fn">addNode</span>(payload);</div>
                             <div class="cw-line">});</div>
                             <div class="cw-line cw-blank">&nbsp;</div>
-                            <div class="cw-line"><span class="cw-comment">// users online: 1,337 ✓</span></div>
+                            <div class="cw-line"><span class="cw-comment">// Generate infrastructure blueprint</span></div>
+                            <div class="cw-line"><span class="cw-kw">const</span> <span class="cw-var">blueprint</span> = <span class="cw-fn">generateDockerCompose</span>(<span class="cw-var">nodes</span>);</div>
+                            <div class="cw-line"><span class="cw-var">blueprint</span>.<span class="cw-fn">export</span>(<span class="cw-str">'docker-compose.yml'</span>);</div>
+                            <div class="cw-line cw-blank">&nbsp;</div>
+                            <div class="cw-line"><span class="cw-comment">// 13 phases complete ✓</span></div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- ── NemApp ── -->
+                <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="50">
+                    <div class="project-header-sm">
+                        <div class="proj-folder"><i class="fas fa-folder-open"></i></div>
+                        <div class="project-links-row">
+                            <a href="https://github.com/onielsteve2003/NemApp-social-media" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://nem-app-social-media-web.vercel.app/" target="_blank" rel="noopener" aria-label="Live"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title-sm">NemApp — Social Media Platform</h3>
+                    <p class="project-desc-sm">Real-time social media app with post feeds, story reels, notifications via Socket.IO, following system, and JWT authentication deployed on Vercel + Render.</p>
+                    <div class="project-tech-list-sm">
+                        <span>Next.js 14</span><span>Node.js</span><span>Socket.IO</span><span>MongoDB</span>
                     </div>
                 </div>
 
